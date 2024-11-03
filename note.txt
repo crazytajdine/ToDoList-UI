@@ -1,0 +1,1 @@
+copy the index page in categories change the main part only (other stuff r the navbars)

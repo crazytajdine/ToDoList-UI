@@ -2,8 +2,12 @@
 module.exports = {
   content: ["./**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'min-phone': '500px',
+        phone: { max: "500px" },
+      },
+    },
   },
   plugins: [],
-}
-
+};

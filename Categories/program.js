@@ -18,10 +18,9 @@ class Subcategorie {
     this.iconPath = iconPath;
   }
 }
-let type = "desktop";
 function getData() {
   const footballIcon = "categoriesSvgs/football.svg";
-  const categorie1 = new Categorie("Categorie 1", "red-500");
+  const categorie1 = new Categorie("Categorie 1", "#ff0000");
   categorie1.addSubcategorie(new Subcategorie("Subcategorie 1", footballIcon));
   categorie1.addSubcategorie(new Subcategorie("Subcategorie 2", footballIcon));
   return [categorie1, categorie1, categorie1, categorie1, categorie1];
@@ -36,7 +35,8 @@ function renderCategories() {
 
     categories.forEach((categorie, index) => {
       const categoryDiv = document.createElement("div");
-      categoryDiv.className = `w-3/4 min-h-12 bg-${categorie.color} text-white rounded-3xl flex justify-between items-center my-4`;
+      categoryDiv.className = `w-3/4 min-phone:max-w-64 min-h-12 min-phone:self-start  text-white rounded-3xl flex justify-between items-center my-4`;
+      categoryDiv.style.backgroundColor = categorie.color;
       categoryDiv.innerHTML = `
     <span class="flex items-center ml-10">${categorie.name}</span>
     <span class="mr-4 w-10 flex flex-row-reverse space-x-2 space-x-reverse">
@@ -54,20 +54,19 @@ function renderCategories() {
 
       // Create subcategories container for each category
       const subcategoriesContainer = document.createElement("div");
-      subcategoriesContainer.className = `transition-all duration-500   overflow-hidden opacity-0 max-h-0  w-3/4`;
-      subcategoriesContainer.id = `subcategories-${index}`;
+      subcategoriesContainer.className = `subcategories-${index} transition-all duration-500   overflow-hidden opacity-0 max-h-0 min-phone:ml-24 phone:justify-center `;
 
       // Populate subcategories for each category
       categorie.getSubcategories().forEach((subcategory) => {
         const subDiv = document.createElement("div");
-        subDiv.className = "flex items-center justify-center w-full  my-2";
+        subDiv.className = "flex items-center     w-full  my-2";
         subDiv.innerHTML = `
-        <span class="text-${categorie.color}">${subcategory.name}</span>
+        <span style="color: ${categorie.color};">${subcategory.name}</span>
         <div class="min-w-16 h-px">
         <div class="min-w-16 h-px border border-secondary"></div>
         </div>
         
-        <div class="ml-2">
+        <div class=" h-6 w-6 ml-2">
         
         <img src="${subcategory.iconPath}" class="h-6 w-6" alt="${subcategory.name}">
         </div>
@@ -76,52 +75,27 @@ function renderCategories() {
       });
 
       // Insert the subcategories container after the main category div
-      container.insertBefore(subcategoriesContainer,container.children[1]);
+      container.insertBefore(subcategoriesContainer, container.children[1]);
     });
   });
 }
 
 // Toggle function to show/hide subcategories
 function toggleSubcategories(index) {
-    const subcategoriesContainer = document.getElementsByClassName(type)[0].querySelector(
-        `#subcategories-${index}`
-    );
-    const isVisible = subcategoriesContainer.classList.contains("opacity-100");
+  Array.from(document.getElementsByClassName(`subcategories-${index}`)).forEach(
+    (subcategoriesContainer) => {
+      const isVisible =
+        subcategoriesContainer.classList.contains("opacity-100");
 
-  if (isVisible) {
-      subcategoriesContainer.classList.remove("opacity-100", "max-h-screen");
-      subcategoriesContainer.classList.add("opacity-0", "max-h-0");
-  } else {
-    subcategoriesContainer.classList.remove("opacity-0", "max-h-0");
-    subcategoriesContainer.classList.add("opacity-100", "max-h-screen");
-      console.log(subcategoriesContainer);
-  
-}
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (window.innerWidth < 500) {
-    document.getElementsByClassName("phone")[0].style.display = "block";
-    document.getElementsByClassName("desktop")[0].style.display = "none";
-    type = "phone";  
-} else {
-    document.getElementsByClassName("phone")[0].style.display = "none";
-    document.getElementsByClassName("desktop")[0].style.display = "block";
-    type = "desktop"  
+      if (isVisible) {
+        subcategoriesContainer.classList.remove("opacity-100", "max-h-screen");
+        subcategoriesContainer.classList.add("opacity-0", "max-h-0");
+      } else {
+        subcategoriesContainer.classList.remove("opacity-0", "max-h-0");
+        subcategoriesContainer.classList.add("opacity-100", "max-h-screen");
+      }
+    }
+  );
 }
 
-  renderCategories();
-});
-window.addEventListener("resize", () => {
-  if (window.innerWidth < 500) {
-    document.getElementsByClassName("phone")[0].style.display = "block";
-    document.getElementsByClassName("desktop")[0].style.display = "none";
-    type = "phone";  
- 
-} else {
-    document.getElementsByClassName("phone")[0].style.display = "none";
-    document.getElementsByClassName("desktop")[0].style.display = "block";
-    type = "desktop"  
-  
-}
-});
+document.addEventListener("DOMContentLoaded", renderCategories);
