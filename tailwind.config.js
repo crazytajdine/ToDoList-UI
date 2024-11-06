@@ -6,6 +6,7 @@ module.exports = {
       screens: {
         'min-phone': '500px',
         phone: { max: "500px" },
+        toosmall : "333px",
       },
     },
   },

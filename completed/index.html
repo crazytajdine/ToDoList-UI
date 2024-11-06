@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="" lang="en">
+<html  lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -518,16 +518,76 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="w-full sm:pl-7 pt-10">
-          <div
-            class="categories-container min-h-[87%] mb-2 flex flex-col phone:items-center"
-          >
-            <button
-              class="mt-24 w-3/4 h-12 bg-zinc-300/20 border text-black rounded-3xl flex items-center justify-center"
-            >
-              <span class="ml-10">Add new categorie</span>
-            </button>
+        <main class="bg-gray-100 p-4">
+          <!-- Header -->
+          <div class="flex justify-between items-center mb-4">
+            <div class="flex space-x-4">
+              <button
+                class="all px-4 py-2 bg-yellow-500 text-gray-800 rounded-full focus:outline-none"
+              >
+                All
+              </button>
+              <button
+                class="today px-4 py-2 bg-gray-300 text-gray-800 rounded-full focus:outline-none"
+              >
+                Today
+              </button>
+            </div>
           </div>
+
+          <!-- Task Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Task Card -->
+            <div class="bg-gray-200 rounded-xl p-4 shadow">
+              <h3 class="text-lg font-bold text-gray-800">task 1</h3>
+              <p class="text-sm text-gray-600">10/19/2024</p>
+              <p class="text-sm text-gray-700 mt-2">learn UI using Figma</p>
+            </div>
+
+            <!-- Task Card -->
+            <div class="bg-gray-200 rounded-xl p-4 shadow">
+              <h3 class="text-lg font-bold text-gray-800">UML</h3>
+              <p class="text-sm text-gray-600">10/19/2024</p>
+              <p class="text-sm text-gray-700 mt-2">
+                Understand the Basics of UML<br />
+                Learn UML Use Case Diagrams<br />
+                Study UML Class Diagrams<br />
+                Understand Sequence Diagrams<br />
+                ...
+              </p>
+            </div>
+
+            <!-- Repeat Task Cards -->
+            <div class="bg-gray-200 rounded-xl p-4 shadow">
+              <h3 class="text-lg font-bold text-gray-800">task 1</h3>
+              <p class="text-sm text-gray-600">10/19/2024</p>
+              <p class="text-sm text-gray-700 mt-2">learn UI using Figma</p>
+            </div>
+            <div class="bg-gray-200 rounded-xl p-4 shadow">
+              <h3 class="text-lg font-bold text-gray-800">UML</h3>
+              <p class="text-sm text-gray-600">10/19/2024</p>
+              <p class="text-sm text-gray-700 mt-2">
+                Understand the Basics of UML<br />
+                Learn UML Use Case Diagrams<br />
+                Study UML Class Diagrams<br />
+                Understand Sequence Diagrams<br />
+                ...
+              </p>
+            </div>
+
+            <div class="bg-gray-200 rounded-xl p-4 shadow">
+              <h3 class="text-lg font-bold text-gray-800">task 1</h3>
+              <p class="text-sm text-gray-600">10/19/2024</p>
+              <p class="text-sm text-gray-700 mt-2">learn UI using Figma</p>
+            </div>
+            <div class="bg-gray-200 rounded-xl p-4 shadow">
+              <h3 class="text-lg font-bold text-gray-800">task 1</h3>
+              <p class="text-sm text-gray-600">10/19/2024</p>
+              <p class="text-sm text-gray-700 mt-2">learn UI using Figma</p>
+            </div>
+          </div>
+
+          <!-- Floating Button -->
         </main>
       </div>
     </div>
@@ -568,14 +628,75 @@
         </div>
         <!--Content-->
       </div>
-      <main
-        class="categories-container min-h-[87%] mb-2 flex flex-col items-center"
-      >
-        <button
-          class="mt-24 w-3/4 h-12 bg-zinc-300/20 border text-black rounded-3xl flex items-center justify-center"
-        >
-          <span class="ml-10">Add new categorie</span>
-        </button>
+
+      <main class="bg-gray-100 p-4">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-4">
+          <div class="flex space-x-4">
+            <button
+              class="all px-4 py-2 bg-yellow-500 text-gray-800 rounded-full focus:outline-none"
+            >
+              All
+            </button>
+            <button
+              class="today px-4 py-2 bg-gray-300 text-gray-800 rounded-full focus:outline-none"
+            >
+              Today
+            </button>
+          </div>
+        </div>
+
+        <!-- Task Grid -->
+        <div class="grid grid-cols-1 toosmall:grid-cols-2 gap-4">
+          <!-- Task Card -->
+          <div class="bg-gray-200 rounded-xl p-4 shadow">
+            <h3 class="text-lg font-bold text-gray-800">task 1</h3>
+            <p class="text-sm text-gray-600">10/19/2024</p>
+            <p class="text-sm text-gray-700 mt-2">learn UI using Figma</p>
+          </div>
+
+          <!-- Task Card -->
+          <div class="bg-gray-200 rounded-xl p-4 shadow">
+            <h3 class="text-lg font-bold text-gray-800">UML</h3>
+            <p class="text-sm text-gray-600">10/19/2024</p>
+            <p class="text-sm text-gray-700 mt-2">
+              Understand the Basics of UML<br />
+              Learn UML Use Case Diagrams<br />
+              Study UML Class Diagrams<br />
+              Understand Sequence Diagrams<br />
+              ...
+            </p>
+          </div>
+
+          <!-- Repeat Task Cards -->
+          <div class="bg-gray-200 rounded-xl p-4 shadow">
+            <h3 class="text-lg font-bold text-gray-800">task 1</h3>
+            <p class="text-sm text-gray-600">10/19/2024</p>
+            <p class="text-sm text-gray-700 mt-2">learn UI using Figma</p>
+          </div>
+          <div class="bg-gray-200 rounded-xl p-4 shadow">
+            <h3 class="text-lg font-bold text-gray-800">UML</h3>
+            <p class="text-sm text-gray-600">10/19/2024</p>
+            <p class="text-sm text-gray-700 mt-2">
+              Understand the Basics of UML<br />
+              Learn UML Use Case Diagrams<br />
+              Study UML Class Diagrams<br />
+              Understand Sequence Diagrams<br />
+              ...
+            </p>
+          </div>
+
+          <div class="bg-gray-200 rounded-xl p-4 shadow">
+            <h3 class="text-lg font-bold text-gray-800">task 1</h3>
+            <p class="text-sm text-gray-600">10/19/2024</p>
+            <p class="text-sm text-gray-700 mt-2">learn UI using Figma</p>
+          </div>
+          <div class="bg-gray-200 rounded-xl p-4 shadow">
+            <h3 class="text-lg font-bold text-gray-800">task 1</h3>
+            <p class="text-sm text-gray-600">10/19/2024</p>
+            <p class="text-sm text-gray-700 mt-2">learn UI using Figma</p>
+          </div>
+        </div>
       </main>
       <div
         class="max-h-[6%] min-h-12 sticky bottom-0 left-0 w-full z-50 bg-secondary2"
