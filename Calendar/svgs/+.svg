@@ -1,0 +1,16 @@
+<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="+">
+<g id="Vector_2">
+<path d="M11 2V21V2Z" fill="#EEFEEB"/>
+<path d="M11 2V21" stroke="#F7F7FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Vector_3">
+<path d="M21 11H14H21Z" fill="#EFEEEB"/>
+<path d="M21 9C22.1046 9 23 9.89543 23 11C23 12.1046 22.1046 13 21 13V9ZM14 13H12V9H14V13ZM21 13H14V9H21V13Z" fill="#F7F7FA"/>
+</g>
+<g id="Vector_3_2">
+<path d="M2 11H9H2Z" fill="#EFEEEB"/>
+<path d="M2 9C0.89543 9 0 9.89543 0 11C0 12.1046 0.89543 13 2 13V9ZM9 13H11V9H9V13ZM2 13H9V9H2V13Z" fill="#F7F7FA"/>
+</g>
+</g>
+</svg>
