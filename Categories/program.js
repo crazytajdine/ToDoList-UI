@@ -18,12 +18,30 @@ class Subcategorie {
     this.iconPath = iconPath;
   }
 }
+
 function getData() {
+  const categories = [];
+
   const footballIcon = "categoriesSvgs/football.svg";
-  const categorie1 = new Categorie("Categorie 1", "#ff0000");
-  categorie1.addSubcategorie(new Subcategorie("Subcategorie 1", footballIcon));
-  categorie1.addSubcategorie(new Subcategorie("Subcategorie 2", footballIcon));
-  return [categorie1, categorie1, categorie1, categorie1, categorie1];
+  const basketballIcon = "categoriesSvgs/football.svg";
+  const musicIcon = "categoriesSvgs/football.svg";
+  const travelIcon = "categoriesSvgs/football.svg";
+
+  const sportsCategory = new Categorie("Sports", "#EF4444"); // Light Pink
+  sportsCategory.addSubcategorie(new Subcategorie("Football", footballIcon));
+  sportsCategory.addSubcategorie(new Subcategorie("Football", basketballIcon));
+
+  const musicCategory = new Categorie("Music", "#22C55E"); // Peach Puff
+  musicCategory.addSubcategorie(new Subcategorie("Football", musicIcon));
+  musicCategory.addSubcategorie(new Subcategorie("Football", musicIcon));
+
+  const travelCategory = new Categorie("Travel", "#A855F7"); // Lavender
+  travelCategory.addSubcategorie(new Subcategorie("Football", travelIcon));
+  travelCategory.addSubcategorie(new Subcategorie("Football", travelIcon));
+
+  categories.push(sportsCategory, musicCategory, travelCategory);
+
+  return categories;
 }
 
 function renderCategories() {
