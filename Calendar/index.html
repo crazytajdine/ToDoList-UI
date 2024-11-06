@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Calendar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="flex h-full bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="min-w-22 h-full   bg-white shadow-md p-6 flex flex-col">
+        <!-- Profile Section -->
+        <div class="flex gap-5 items-center">
+          <img
+            src="https://via.placeholder.com/80"
+            alt="Profile Picture"
+            class="rounded-full w-20 h-20 mb-2"
+          />
+          <h2 class="text-lg font-semibold">Taj zwin</h2>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex-grow ">
+          <ul class="space-y-4 text-gray-700">
+            <li>
+              <a
+                href="/profile"
+                class="flex items-center p-2 rounded hover:bg-gray-200"
+              >
+                <span class="ml-2 flex items-center gap-2">
+                  <svg
+                    class="w-full h-full"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_95_1535)">
+                      <path
+                        d="M15 17.1429C17.9587 17.1429 20.3572 14.7444 20.3572 11.7857C20.3572 8.82707 17.9587 6.42859 15 6.42859C12.0414 6.42859 9.64288 8.82707 9.64288 11.7857C9.64288 14.7444 12.0414 17.1429 15 17.1429Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M5.84998 25.5C6.8062 23.9304 8.15014 22.6331 9.75257 21.7331C11.355 20.8328 13.162 20.36 15 20.36C16.8379 20.36 18.645 20.8328 20.2474 21.7331C21.8499 22.6331 23.1937 23.9304 24.15 25.5"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15 28.9286C22.6927 28.9286 28.9286 22.6927 28.9286 15C28.9286 7.30748 22.6927 1.07144 15 1.07144C7.30748 1.07144 1.07144 7.30748 1.07144 15C1.07144 22.6927 7.30748 28.9286 15 28.9286Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_95_1535">
+                        <rect width="30" height="30" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <div>Profil</div>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/"
+                class="flex items-center p-2 rounded hover:bg-gray-200"
+              >
+                <span class="ml-2 flex items-center gap-2">
+                  <svg
+                    class="w-full h-full"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 28 28"
+                    fill="none"
+                  >
+                    <path
+                      d="M27 13.88C27.002 13.6024 26.946 13.3274 26.8358 13.0726C26.7256 12.8178 26.5636 12.5887 26.36 12.4L14 1L1.64004 12.4C1.43649 12.5887 1.27447 12.8178 1.16429 13.0726C1.0541 13.3274 0.998168 13.6024 1.00005 13.88V25C1.00005 25.5304 1.21076 26.0392 1.58583 26.4142C1.9609 26.7892 2.46962 27 3.00004 27H25C25.5304 27 26.0392 26.7892 26.4142 26.4142C26.7894 26.0392 27 25.5304 27 25V13.88Z"
+                      fill="none"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path d="M14 27V19V27Z" fill="#F7F7FA" />
+                    <path
+                      d="M14 27V19"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <div>Accueil</div>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/tasks"
+                class="flex items-center p-2 rounded hover:bg-gray-200"
+              >
+                <span class="ml-2 flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                  >
+                    <path
+                      d="M17.0714 1H3.14286C1.95939 1 1 1.95939 1 3.14286V26.7143C1 27.8978 1.95939 28.8571 3.14286 28.8571H22.4286C23.6121 28.8571 24.5714 27.8978 24.5714 26.7143V17.0714"
+                      fill="#F7F7FA"
+                    />
+                    <path
+                      d="M17.0714 1H3.14286C1.95939 1 1 1.95939 1 3.14286V26.7143C1 27.8978 1.95939 28.8571 3.14286 28.8571H22.4286C23.6121 28.8571 24.5714 27.8978 24.5714 26.7143V17.0714"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M1 22.4286H24.5714"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M7.42856 6.35715H11.7143"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M7.42856 11.7143H9.57142"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M19.2017 16.0124L12.7731 17.1696L13.8446 10.6553L22.9088 1.63385C23.108 1.43301 23.345 1.27359 23.6063 1.1648C23.8673 1.05601 24.1473 1 24.4302 1C24.7133 1 24.9933 1.05601 25.2543 1.1648C25.5155 1.27359 25.7525 1.43301 25.9516 1.63385L28.223 3.90529C28.424 4.10449 28.5835 4.34149 28.6921 4.60261C28.801 4.86374 28.8569 5.14384 28.8569 5.42671C28.8569 5.70959 28.801 5.98969 28.6921 6.25079C28.5835 6.51192 28.424 6.74894 28.223 6.94814L19.2017 16.0124Z"
+                      fill="#F7F7FA"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <div>Les tâches</div>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/comleted"
+                class="flex items-center p-2 rounded hover:bg-gray-200"
+              >
+                <span class="ml-2 flex items-center gap-2">
+                  <svg
+                    class="w-full h-full"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                  >
+                    <path
+                      d="M22.4286 1H7.42857C3.87818 1 1 3.87818 1 7.42857V22.4286C1 25.9791 3.87818 28.8571 7.42857 28.8571H22.4286C25.9791 28.8571 28.8571 25.9791 28.8571 22.4286V7.42857C28.8571 3.87818 25.9791 1 22.4286 1Z"
+                      fill="none"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M21.1795 10.1071L12.6081 20.8214L8.32239 17.6071"
+                      fill="#none"
+                    />
+                    <path
+                      d="M21.1795 10.1071L12.6081 20.8214L8.32239 17.6071"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <div>Complété</div>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/categories"
+                class="flex items-center p-2 rounded hover:bg-gray-200"
+              >
+                <span class="ml-2 flex items-center gap-2">
+                  <svg
+                    class="w-full h-full"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="27"
+                    height="27"
+                    viewBox="0 0 27 27"
+                    fill="none"
+                  >
+                    <path
+                      d="M6.26787 11.5714C9.19694 11.5714 11.5714 9.19693 11.5714 6.26785C11.5714 3.33877 9.19694 0.964279 6.26787 0.964279C3.33879 0.964279 0.964294 3.33877 0.964294 6.26785C0.964294 9.19693 3.33879 11.5714 6.26787 11.5714Z"
+                      stroke="black"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M20.7322 11.5714C23.6613 11.5714 26.0357 9.19693 26.0357 6.26785C26.0357 3.33877 23.6613 0.964279 20.7322 0.964279C17.8031 0.964279 15.4286 3.33877 15.4286 6.26785C15.4286 9.19693 17.8031 11.5714 20.7322 11.5714Z"
+                      stroke="black"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6.26787 26.0357C9.19694 26.0357 11.5714 23.6612 11.5714 20.7321C11.5714 17.8031 9.19694 15.4286 6.26787 15.4286C3.33879 15.4286 0.964294 17.8031 0.964294 20.7321C0.964294 23.6612 3.33879 26.0357 6.26787 26.0357Z"
+                      stroke="black"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M20.7322 26.0357C23.6613 26.0357 26.0357 23.6612 26.0357 20.7321C26.0357 17.8031 23.6613 15.4286 20.7322 15.4286C17.8031 15.4286 15.4286 17.8031 15.4286 20.7321C15.4286 23.6612 17.8031 26.0357 20.7322 26.0357Z"
+                      stroke="black"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <div>Catégories</div>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/parameter"
+                class="flex items-center p-2 rounded hover:bg-gray-200"
+              >
+                <span class="ml-2 flex items-center gap-2">
+                  <svg
+                    class="w-full h-full"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="30"
+                    viewBox="0 0 28 30"
+                    fill="none"
+                  >
+                    <path
+                      d="M9.99558 4.75L10.917 2.37143C11.0724 1.96871 11.3458 1.62231 11.7014 1.3776C12.057 1.13289 12.4782 1.00127 12.9099 1H14.667C15.0987 1.00127 15.5199 1.13289 15.8755 1.3776C16.2311 1.62231 16.5045 1.96871 16.6599 2.37143L17.5813 4.75L20.7098 6.55L23.2384 6.16429C23.6594 6.10714 24.088 6.17644 24.4696 6.3634C24.8511 6.55036 25.1684 6.84653 25.3812 7.21429L26.2384 8.71429C26.458 9.08789 26.5594 9.51931 26.5287 9.95161C26.4981 10.3839 26.3371 10.7968 26.0669 11.1357L24.5026 13.1286V16.7286L26.1098 18.7214C26.38 19.0604 26.5409 19.4732 26.5716 19.9055C26.6022 20.3378 26.5009 20.7692 26.2812 21.1429L25.4241 22.6429C25.2113 23.0106 24.8939 23.3067 24.5125 23.4938C24.1309 23.6806 23.7023 23.7501 23.2812 23.6929L20.7526 23.3071L17.6242 25.1071L16.7027 27.4857C16.5473 27.8884 16.2739 28.2349 15.9183 28.4796C15.5627 28.7243 15.1415 28.8559 14.7099 28.8571H12.9099C12.4782 28.8559 12.057 28.7243 11.7014 28.4796C11.3458 28.2349 11.0724 27.8884 10.917 27.4857L9.99558 25.1071L6.86701 23.3071L4.33844 23.6929C3.91741 23.7501 3.48888 23.6806 3.10732 23.4938C2.72579 23.3067 2.40843 23.0106 2.19558 22.6429L1.33844 21.1429C1.11879 20.7692 1.01761 20.3378 1.04821 19.9055C1.07881 19.4732 1.23978 19.0604 1.50986 18.7214L3.07415 16.7286V13.1286L1.46701 11.1357C1.19692 10.7968 1.03595 10.3839 1.00535 9.95161C0.97475 9.51931 1.07594 9.08789 1.29558 8.71429L2.15272 7.21429C2.36557 6.84653 2.68293 6.55036 3.06446 6.3634C3.44602 6.17644 3.87455 6.10714 4.29558 6.16429L6.82415 6.55L9.99558 4.75ZM9.50272 14.9286C9.50272 15.7762 9.75408 16.6048 10.225 17.3096C10.6959 18.0144 11.3653 18.5637 12.1484 18.8881C12.9315 19.2124 13.7932 19.2973 14.6245 19.1319C15.4559 18.9666 16.2195 18.5584 16.8189 17.959C17.4183 17.3597 17.8264 16.596 17.9918 15.7647C18.1572 14.9333 18.0723 14.0716 17.7479 13.2885C17.4236 12.5054 16.8742 11.836 16.1695 11.3651C15.4647 10.8942 14.6361 10.6429 13.7884 10.6429C12.6518 10.6429 11.5617 11.0944 10.758 11.8981C9.95426 12.7018 9.50272 13.7919 9.50272 14.9286Z"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <div>Paramètres</div>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/aboutus"
+                class="flex items-center p-2 rounded hover:bg-gray-200"
+              >
+                <span class="ml-2 flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_95_1568)">
+                      <path
+                        d="M15 28.9286C22.6927 28.9286 28.9286 22.6926 28.9286 15C28.9286 7.30747 22.6927 1.07143 15 1.07143C7.30748 1.07143 1.07144 7.30747 1.07144 15C1.07144 22.6926 7.30748 28.9286 15 28.9286Z"
+                        stroke="black"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M11.7857 21.4286H18.2143"
+                        stroke="black"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15 21.4286V13.9286H12.8572"
+                        stroke="black"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15 9.10715C14.7041 9.10715 14.4643 8.8673 14.4643 8.57143C14.4643 8.27557 14.7041 8.03572 15 8.03572"
+                        stroke="black"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M15 9.10715C15.2959 9.10715 15.5357 8.8673 15.5357 8.57143C15.5357 8.27557 15.2959 8.03572 15 8.03572"
+                        stroke="black"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_95_1568">
+                        <rect width="30" height="30" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <div>À propos</div>
+                </span>
+              </a>
+            </li>
+            <li>
+              <button 
+                class="flex items-center p-2 rounded hover:bg-gray-200"
+              >
+                <span class="ml-2 flex items-center gap-2">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.2429 22 18.8286 22 16.0002 22H15.0002C12.1718 22 10.7576 22 9.87889 21.1213C9.11051 20.3529 9.01406 19.175 9.00195 17"
+                      stroke="#1C274C"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M15 12L2 12M2 12L5.5 9M2 12L5.5 15"
+                      stroke="#1C274C"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <div>Se déconnecter</div>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 bg-white">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-6">
+            <input type="text" placeholder="Recherchez une tâche" class="p-2 w-1/2 bg-gray-200 rounded-lg text-gray-700">
+            <button class="p-2 rounded-lg bg-gray-200">
+                <span>🔔</span>
+            </button>
+        </div>
+
+        <!-- Add Task and Categories -->
+        <div class="mb-4">
+            <button class="p-2 bg-gray-200 rounded-full text-sm">+ Ajouter une nouvelle tâche, appuyez sur la touche [Entrer] pour sauvegarder</button>
+        </div>
+        <div class="flex space-x-2 mb-6">
+            <span class="px-3 py-1 bg-red-500 text-white rounded-full text-xs">Sports</span>
+            <span class="px-3 py-1 bg-green-500 text-white rounded-full text-xs">Work</span>
+            <span class="px-3 py-1 bg-purple-500 text-white rounded-full text-xs">Places</span>
+            <span class="px-3 py-1 bg-blue-500 text-white rounded-full text-xs">Walk out</span>
+        </div>
+
+        <!-- Calendar -->
+        <div class="grid grid-cols-7 gap-4 text-center">
+            <!-- Days of the week headers -->
+            <div class="text-gray-600 font-semibold">Sun</div>
+            <div class="text-gray-600 font-semibold">Mon</div>
+            <div class="text-gray-600 font-semibold">Tue</div>
+            <div class="text-gray-600 font-semibold">Wed</div>
+            <div class="text-gray-600 font-semibold">Thu</div>
+            <div class="text-gray-600 font-semibold">Fri</div>
+            <div class="text-gray-600 font-semibold">Sat</div>
+
+            <!-- Example calendar days with tasks -->
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold"></p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-red-500"></span> <!-- Sports task -->
+                    <span class="text-purple-500"></span> <!-- Places task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold"></p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-green-500"></span> <!-- Work task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">1</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">2</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-blue-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M7 4h-2V2H2v2h2v2h2V4zm4 2H7V4H5v2H3l1 9h12.6l2.4-6H7zm6.8 2l-1.6 4H6.8L6 8h8.8zM8 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">3</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">4</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span> <!-- Walk out task -->
+                </div>
+            </div><div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">5</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.942 6.837 20.76 4.654l.947-.947a1 1 0 1 0-1.414-1.414l-.947.947-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-5.894 5.894-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-.947.947a1 1 0 1 0 1.414 1.414l.947-.947 2.183 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105L9.76 15.655l5.9-5.895 2.182 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105ZM11 20.39a1.6 1.6 0 0 1-.472 1.138 1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779A1.6 1.6 0 0 1 11 20.39m10.528-9.862a1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779a1.61 1.61 0 0 1 0 2.277"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">6</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.942 6.837 20.76 4.654l.947-.947a1 1 0 1 0-1.414-1.414l-.947.947-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-5.894 5.894-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-.947.947a1 1 0 1 0 1.414 1.414l.947-.947 2.183 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105L9.76 15.655l5.9-5.895 2.182 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105ZM11 20.39a1.6 1.6 0 0 1-.472 1.138 1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779A1.6 1.6 0 0 1 11 20.39m10.528-9.862a1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779a1.61 1.61 0 0 1 0 2.277"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">7</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-red-500"></span>
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg>
+                     <!-- Sports task --> <!-- Places task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">8</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.942 6.837 20.76 4.654l.947-.947a1 1 0 1 0-1.414-1.414l-.947.947-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-5.894 5.894-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-.947.947a1 1 0 1 0 1.414 1.414l.947-.947 2.183 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105L9.76 15.655l5.9-5.895 2.182 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105ZM11 20.39a1.6 1.6 0 0 1-.472 1.138 1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779A1.6 1.6 0 0 1 11 20.39m10.528-9.862a1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779a1.61 1.61 0 0 1 0 2.277"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg> <!-- Work task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">9</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.942 6.837 20.76 4.654l.947-.947a1 1 0 1 0-1.414-1.414l-.947.947-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-5.894 5.894-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-.947.947a1 1 0 1 0 1.414 1.414l.947-.947 2.183 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105L9.76 15.655l5.9-5.895 2.182 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105ZM11 20.39a1.6 1.6 0 0 1-.472 1.138 1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779A1.6 1.6 0 0 1 11 20.39m10.528-9.862a1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779a1.61 1.61 0 0 1 0 2.277"/>
+                    </svg>
+                     <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">10</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-blue-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M7 4h-2V2H2v2h2v2h2V4zm4 2H7V4H5v2H3l1 9h12.6l2.4-6H7zm6.8 2l-1.6 4H6.8L6 8h8.8zM8 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">11</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg>
+                    <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">12</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg>
+                     <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">13</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg>
+                    
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">14</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">15</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-red-500"></span> <!-- Sports task -->
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg> <!-- Places task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">16</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-green-500"></span> <!-- Work task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">17</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span> 
+                    <svg class="w-6 h-6 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.942 6.837 20.76 4.654l.947-.947a1 1 0 1 0-1.414-1.414l-.947.947-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-5.894 5.894-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-.947.947a1 1 0 1 0 1.414 1.414l.947-.947 2.183 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105L9.76 15.655l5.9-5.895 2.182 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105ZM11 20.39a1.6 1.6 0 0 1-.472 1.138 1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779A1.6 1.6 0 0 1 11 20.39m10.528-9.862a1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779a1.61 1.61 0 0 1 0 2.277"/>
+                    </svg><!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">18</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.942 6.837 20.76 4.654l.947-.947a1 1 0 1 0-1.414-1.414l-.947.947-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-5.894 5.894-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-.947.947a1 1 0 1 0 1.414 1.414l.947-.947 2.183 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105L9.76 15.655l5.9-5.895 2.182 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105ZM11 20.39a1.6 1.6 0 0 1-.472 1.138 1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779A1.6 1.6 0 0 1 11 20.39m10.528-9.862a1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779a1.61 1.61 0 0 1 0 2.277"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">19</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span>
+                    <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">20</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.942 6.837 20.76 4.654l.947-.947a1 1 0 1 0-1.414-1.414l-.947.947-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-5.894 5.894-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-.947.947a1 1 0 1 0 1.414 1.414l.947-.947 2.183 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105L9.76 15.655l5.9-5.895 2.182 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105ZM11 20.39a1.6 1.6 0 0 1-.472 1.138 1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779A1.6 1.6 0 0 1 11 20.39m10.528-9.862a1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779a1.61 1.61 0 0 1 0 2.277"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">21</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span> <!-- Walk out task -->
+            </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">22</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span>
+                    <svg class="w-6 h-6 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.942 6.837 20.76 4.654l.947-.947a1 1 0 1 0-1.414-1.414l-.947.947-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-5.894 5.894-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-.947.947a1 1 0 1 0 1.414 1.414l.947-.947 2.183 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105L9.76 15.655l5.9-5.895 2.182 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105ZM11 20.39a1.6 1.6 0 0 1-.472 1.138 1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779A1.6 1.6 0 0 1 11 20.39m10.528-9.862a1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779a1.61 1.61 0 0 1 0 2.277"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">23</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">24</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">25</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">26</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg>
+                    <svg class="w-6 h-6 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.942 6.837 20.76 4.654l.947-.947a1 1 0 1 0-1.414-1.414l-.947.947-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-5.894 5.894-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-.947.947a1 1 0 1 0 1.414 1.414l.947-.947 2.183 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105L9.76 15.655l5.9-5.895 2.182 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105ZM11 20.39a1.6 1.6 0 0 1-.472 1.138 1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779A1.6 1.6 0 0 1 11 20.39m10.528-9.862a1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779a1.61 1.61 0 0 1 0 2.277"/>
+                    </svg>
+                       <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">27</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500">🚶‍♂️</span> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">28</p>
+                <div class="flex space-x-1 mt-2">
+                    <svg class="w-6 h-6 text-blue-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M7 4h-2V2H2v2h2v2h2V4zm4 2H7V4H5v2H3l1 9h12.6l2.4-6H7zm6.8 2l-1.6 4H6.8L6 8h8.8zM8 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                    </svg> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">29</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span> <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">30</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span>
+                    <svg class="w-6 h-6 text-purple-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L2 8v2h2v10h4V12h8v8h4V10h2V8l-10-6zm0 2.25L19 8H5L12 4.25zm-3 8.75H7v6H5v-6H3v-3h6v3z"/>
+                    </svg>
+                     <!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold">31</p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span> 
+                    <svg class="w-6 h-6 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.942 6.837 20.76 4.654l.947-.947a1 1 0 1 0-1.414-1.414l-.947.947-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-5.894 5.894-2.183-2.182a3.7 3.7 0 0 0-5.105 0 3.61 3.61 0 0 0 0 5.106l2.182 2.182-.947.947a1 1 0 1 0 1.414 1.414l.947-.947 2.183 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105L9.76 15.655l5.9-5.895 2.182 2.182a3.61 3.61 0 0 0 5.105 0 3.61 3.61 0 0 0 0-5.105ZM11 20.39a1.6 1.6 0 0 1-.472 1.138 1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779A1.6 1.6 0 0 1 11 20.39m10.528-9.862a1.647 1.647 0 0 1-2.277 0l-5.779-5.779a1.61 1.61 0 1 1 2.277-2.277l5.779 5.779a1.61 1.61 0 0 1 0 2.277"/>
+                    </svg><!-- Walk out task -->
+                </div>
+            </div>
+            <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold"></p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span> <!-- Walk out task -->
+                </div>
+            </div> <div class="h-24 border border-gray-300 flex flex-col justify-center items-center bg-gray-50">
+                <p class="text-lg font-semibold"></p>
+                <div class="flex space-x-1 mt-2">
+                    <span class="text-blue-500"></span> <!-- Walk out task -->
+                </div>
+            </div>
+
+   
+
+        
+            <!-- Repeat similar blocks for each day in the calendar... -->
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
